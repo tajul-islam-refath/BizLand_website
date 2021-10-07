@@ -25,18 +25,24 @@ function main() {
         }
         htmlProgress()
     }
-    // HTMl
-    progressBar("html", 100);
-    // CSS 
-    progressBar("css", 80);
-    // javascript
-    progressBar("javascript", 70);
-    //React JS
-    progressBar("react", 70);
-    //Bootstrap
-    progressBar("bootstrap", 90);
-    //Node Js
-    progressBar("node", 50);
+
+
+    window.addEventListener("scroll", function() {
+        if (window.pageYOffset > 1550 && window.pageYOffset < 2300) {
+            // HTMl
+            progressBar("html", 100);
+            // CSS 
+            progressBar("css", 80);
+            // javascript
+            progressBar("javascript", 70);
+            //React JS
+            progressBar("react", 70);
+            //Bootstrap
+            progressBar("bootstrap", 90);
+            //Node Js
+            progressBar("node", 50);
+        }
+    })
 
     // counter section 
     function counter(id, value, n) {
@@ -61,6 +67,8 @@ function main() {
     counter("projects", 521, 20)
     counter("support", 1463, 50)
     counter("workers", 15, 1)
+
+
 
 }
 
@@ -96,6 +104,16 @@ function main() {
         main();
     }, 3000)
 
-   
+
+    // active nav link 
+    const tabs = document.querySelectorAll('.nav-link');
+    tabs.forEach(tab => {
+        tab.addEventListener("click", function(e) {
+            let current = document.getElementsByClassName("active-nav")
+            current[0].classList.remove("active-nav")
+            tab.classList.add("active-nav")
+                // e.currentTarget.classList.toggle('active-nav');
+        })
+    })
 
 })()
