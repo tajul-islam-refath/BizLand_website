@@ -116,4 +116,20 @@ function main() {
         })
     })
 
+    const toggle = document.querySelector(".mobile-nav-toggle")
+    toggle.addEventListener("click", () => {
+        const nav = document.getElementById("navbar")
+        const ul = nav.getElementsByTagName("ul")
+        if (ul[0].style.opacity == 0) {
+            ul[0].style.height = "100%"
+            ul[0].style.opacity = 1
+        } else {
+            ul[0].style.height = "0%"
+            ul[0].style.opacity = 0
+        }
+
+    })
+
+
+
 })()
